@@ -17,6 +17,21 @@ With AutoVM you can assign a unique panel for each user to make them fulfilled a
 
 The AutoVM platform is designed to be compatible with default VMware ESXi settings and does not require any changes.
 
+## Installation
+### Automatic installation
+Download and deploy [Ubuntu 18.04](http://file.autovm.net/vmware/templates/ubuntu_18.04_64.ova) or install the iso without any configuration on your ESXi server then config static ip address.
+
+Enter following commands:
+
+```shell
+$ cd /tmp && wget -O autovm.sh https://raw.githubusercontent.com/Cloud-Surph/autovm/master/autovm.sh && bash autovm.sh
+```
+After installation completed, You will see MySQL and login information.
+
+```shell
+$ mysql_secure_installation
+```
+
 ### Do you like to try for free?
 
 To get and set up the system, please visit the installation [article](https://wiki.autovm.net/index.php/Installation). If you have any questions, please read the [FAQ](https://wiki.autovm.net/index.php/FAQs) section. If you didn't find your answer, please ask your question in the [stack](http://stack.autovm.net).
