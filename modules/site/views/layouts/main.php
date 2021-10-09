@@ -100,8 +100,8 @@ $this->registerJs("var baseUrl = \"{$baseUrl}\";", \yii\web\View::POS_END);
                 <div class="container">
                     <div class="row">
                         <div class="col l6 s12">
-                            <h5 class="white-text"><?php echo Yii::t('app', 'AutoVM System');?></h5>
-                            <p class="grey-text text-lighten-4">AutoVM is an open source platform to manage virtual machines(VM) on the VMware ESXI virtualization which allows the VPS providers to manage full automation of support and sales process.</p></p>
+                            <h5 class="white-text"><?php echo Yii::t('app', 'About us');?></h5>
+                            <p class="grey-text text-lighten-4">CloudSurph LLC is a technology solutions company located in the metropolitan area of Washington D.C. and it aims to help people and businesses achieve their online goals.</p></p>
                         </div>
                         <div class="col l4 offset-l2 s12">
                             <h5 class="white-text"><?php echo Yii::t('app', 'Useful Links');?></h5>
