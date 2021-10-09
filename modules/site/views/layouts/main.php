@@ -32,9 +32,9 @@ $this->registerJs("var baseUrl = \"{$baseUrl}\";", \yii\web\View::POS_END);
         <?php if(!Yii::$app->user->isGuest) {echo \app\modules\site\widgets\UserVpsList::widget();}?>
 
         <!-- TopNav !-->
-        <nav class="light-blue darken-1">
+        <nav class="purple darken-4">
             <div class="nav-wrapper">
-                <a href="<?php echo Yii::$app->urlManager->createUrl('/site');?>" class="brand-logo"><img src="<?php echo $bundle->baseUrl;?>/img/logo.png" style="margin-top:10px;" width="150"></a>
+                <a href="<?php echo Yii::$app->urlManager->createUrl('/site');?>" class="brand-logo"><img src="<?php echo $bundle->baseUrl;?>/img/cloudsurph-logo.png" style="margin-top:10px;" width="150"></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul id="lang" class="dropdown-content" style="margin-top:80px;border-radius:10px;">
 					<?php foreach(Yii::$app->lang->langs as $id => $name) {?>
@@ -96,7 +96,7 @@ $this->registerJs("var baseUrl = \"{$baseUrl}\";", \yii\web\View::POS_END);
 
         <!-- Footer !-->
         <div class="footer z-depth-3">
-            <footer class="page-footer light-blue darken-1">
+            <footer class="page-footer purple darken-4">
                 <div class="container">
                     <div class="row">
                         <div class="col l6 s12">
@@ -117,8 +117,7 @@ $this->registerJs("var baseUrl = \"{$baseUrl}\";", \yii\web\View::POS_END);
                 </div>
                 <div class="footer-copyright">
                     <div class="container">
-                        <?php echo Yii::t('app', '© 2018 Created and designed by AutoVM, all rights reserved.');?>
-                        <a class="grey-text text-lighten-4 right" href="http://autovm.net/en" target="_blank">AutoVM</a>
+                        <?php echo Yii::t('app', '© '.date('Y').' CloudSurph LLC. All Rights Reserved.');?>
                     </div>
                 </div>
             </footer>
