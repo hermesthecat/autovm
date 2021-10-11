@@ -6,7 +6,6 @@ use Yii;
 use yii\web\Controller;
 use app\extensions\Api;
 use app\extensions\VPSInstallQueue;
-
 use app\models\Log;
 use app\models\Ip;
 use app\models\Os;
