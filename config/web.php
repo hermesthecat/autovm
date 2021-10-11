@@ -5,7 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'autovm',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log', 'session', 'lang'],
+    'bootstrap' => ['log', 'session', 'lang', 'queue'],
     'language' => 'en',
     'timeZone' => 'GMT',
     'defaultRoute' => 'site/default',
@@ -23,6 +23,10 @@ $config = [
         ]
     ],
     'components' => [
+        'queue' => [
+            'class' => \yii\queue\file\Queue::class,
+            'path' => '@runtime/queue',
+        ],
 		'lang' => 'app\components\Lang',
     	'assetManager' => [
     		'linkAssets' => true,

@@ -8,13 +8,17 @@ $db = require(__DIR__ . '/db.php');
 return [
     'id' => 'autovm-console',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log', 'gii'],
+    'bootstrap' => ['log', 'gii', 'queue'],
     'timeZone' => 'GMT',
     'controllerNamespace' => 'app\commands',
     'modules' => [
         'gii' => 'yii\gii\Module',
     ],
     'components' => [
+        'queue' => [
+            'class' => \yii\queue\file\Queue::class,
+            'path' => '@runtime/queue',
+        ],
         'setting' => [
             'class' => 'app\components\Setting',
         ],
