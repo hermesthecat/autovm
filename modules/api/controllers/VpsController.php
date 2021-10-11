@@ -5,6 +5,7 @@ namespace app\modules\api\controllers;
 use Yii;
 use yii\web\Controller;
 use app\extensions\Api;
+use app\extensions\VPSInstallQueue;
 
 use app\models\Log;
 use app\models\Ip;
@@ -279,31 +280,19 @@ class VpsController extends Controller
                 throw new \Exception('Cannot save vps ip');
             }
 
-            # Installing
-            if ($request->post('install')) {
+            $data = [
+                'ip' => $vps->ip->getAttributes(),
+                'vps' => $vps->getAttributes(),
+                'os' => $vps->os->getAttributes(),
+                'datastore' => $vps->datastore->getAttributes(),
+                'server' => $vps->server->getAttributes(),
+            ];
 
-                $data = [
-                    'ip' => $vps->ip->getAttributes(),
-                    'vps' => $vps->getAttributes(),
-                    'os' => $vps->os->getAttributes(),
-                    'datastore' => $vps->datastore->getAttributes(),
-                    'server' => $vps->server->getAttributes(),
-                ];
-
-                if ($vps->plan) {
-                    $data['plan'] = $vps->plan->getAttributes();
-                }
-
-                $api = new Api;
-                $api->setUrl(Yii::$app->setting->api_url);
-                $api->setData($data);
-
-                $result = $api->request(Api::ACTION_INSTALL);
-
-                if (!$result) {
-                    throw new \Exception('Cannot install os');
-                }
+            if ($vps->plan) {
+                $data['plan'] = $vps->plan->getAttributes();
             }
+
+            $this->runInstallAfterVPSCreation($data);
 
             $transaction->commit();
 
@@ -318,6 +307,13 @@ class VpsController extends Controller
 
             return ['ok' => false, 'e' => $e->getMessage(), 'status' => Status::ERROR_SYSTEM];
         }
+    }
+
+    private function runInstallAfterVPSCreation($data){
+
+        Yii::$app->queue->push(new VPSInstallQueue([
+            'data' => $data,
+        ]));
     }
 
     public function actionInstall()
@@ -370,7 +366,6 @@ class VpsController extends Controller
         $api = new Api;
         $api->setUrl(Yii::$app->setting->api_url);
         $api->setData($data);
-
         $result = $api->request(Api::ACTION_INSTALL);
 
         if ($result) {
