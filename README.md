@@ -32,6 +32,31 @@ After installation completed, You will see MySQL and login information.
 $ mysql_secure_installation
 ```
 
+#### Supervisor installation
+Supervisor is a process monitor for Linux. It automatically starts console processes.
+
+```shell
+$ sudo apt-get install supervisor
+```
+Supervisor config folder is usually available in ```/etc/supervisor/conf.d```. You can create any number of config files there.
+Create new file ```/etc/supervisor/conf.d/yii-queue-worker.conf``` and paste the following data inside file.
+
+```ini
+[program:yii-queue-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=/usr/bin/php /var/www/autovm/yii queue/listen --verbose=1 --color=0
+autostart=true
+autorestart=true
+user=www-data
+numprocs=4
+redirect_stderr=true
+stdout_logfile=/var/www/autovm/runtime/logs/yii-queue-worker.log
+```
+
+Make sure ```autovm/runtime``` directory has write access.
+
+Run ```$ supervisorctl reread``` to update the supervisor running tasks list.
+
 ### Do you like to try for free?
 
 To get and set up the system, please visit the installation [article](https://wiki.autovm.net/index.php/Installation). If you have any questions, please read the [FAQ](https://wiki.autovm.net/index.php/FAQs) section. If you didn't find your answer, please ask your question in the [stack](http://stack.autovm.net).
