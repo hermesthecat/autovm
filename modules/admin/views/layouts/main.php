@@ -166,7 +166,7 @@ $(".custom-option").on("click", function() {
 
             <div class="footer">
                 <div class="col-md-12">
-                    <p>Created and designed by AutoVM, all rights reserved.</p>
+                    <!-- <p>Created and designed by AutoVM, all rights reserved.</p> -->
                 </div>
             </div>
             <!-- END footer -->

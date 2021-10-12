@@ -71,7 +71,7 @@ $this->registerJs("var baseUrl = \"{$baseUrl}\";", \yii\web\View::POS_END);
                         <li<?php echo $controller == 'user' && $action == 'profile' ? ' class="active"' : '';?>><a href="<?php echo Yii::$app->urlManager->createUrl(['/site/setting/index']);?>"><i class="material-icons">person</i>Profile</a></li>
                         <li<?php echo $controller == 'user' && $action == 'login' ? ' class="active"' : '';?>><a href="<?php echo Yii::$app->urlManager->createUrl(['/site/user/login']);?>"><i class="material-icons">history</i>Login History</a></li>
                         <?php if(Yii::$app->user->identity->getIsAdmin()) {?>
-                            <li><a href="<?php echo Yii::$app->urlManager->createUrl('/admin');?>"><i class="material-icons">star</i>Admin</a></li>
+                            <!-- <li><a href="<?php echo Yii::$app->urlManager->createUrl('/admin');?>"><i class="material-icons">star</i>Admin</a></li> -->
                         <?php }?>
                         <li><a href="<?php echo Yii::$app->urlManager->createUrl(['/site/default/logout']);?>"><i class="material-icons">exit_to_app</i>Logout</a></li>
                     <?php }?>
