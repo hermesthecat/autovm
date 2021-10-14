@@ -515,7 +515,7 @@ if 'windows 2008' in os_name or 'windows 7' in os_name:
     time.sleep(4)
 
 # Windows 2012 and 2016 and 8
-if 'windows 2012' in os_name or 'windows 2016' in os_name or 'windows 8' in os_name:
+if 'windows 2012' in os_name or 'windows 2016' in os_name or 'windows 10' in os_name:
   
   if not dhcp:
     
