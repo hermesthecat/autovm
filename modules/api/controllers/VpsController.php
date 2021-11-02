@@ -281,7 +281,7 @@ class VpsController extends Controller
 
             $data = [
                 'ip' => $vps->ip->getAttributes(),
-                'vps' => $vps->getAttributes(),
+                'vps' => Vps::findOne($vps->id)->getAttributes(),
                 'os' => $vps->os->getAttributes(),
                 'datastore' => $vps->datastore->getAttributes(),
                 'server' => $vps->server->getAttributes(),
