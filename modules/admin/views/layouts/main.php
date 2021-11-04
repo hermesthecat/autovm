@@ -92,8 +92,7 @@ $(".custom-option").on("click", function() {
             <!-- header -->
             <div class="navbar navbar-default navbar-fixed-top">
                 <div class="navbar-header">
-                    <a href="#" class="navbar-brand"> <img src="<?php echo $bundle->baseUrl;?>/img/cloudsurph-logo.png"></a>
-                    
+                    <a href="#" class="navbar-brand"> <img src="<?php echo $bundle->baseUrl;?>/img/logo.png"></a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
