@@ -106,11 +106,11 @@ $this->registerJs("var baseUrl = \"{$baseUrl}\";", \yii\web\View::POS_END);
                         <div class="col l4 offset-l2 s12">
                             <h5 class="white-text"><?php echo Yii::t('app', 'Useful Links');?></h5>
                             <ul>
-                                <li><a class="grey-text text-lighten-3" href="http://autovm.net/en/lab.php" target="_blank"><?php echo Yii::t('app', 'Lab');?></a></li>
-                                <li><a class="grey-text text-lighten-3" href="http://wiki.autovm.net" target="_blank"><?php echo Yii::t('app', 'Wiki');?></a></li>
-                                <li><a class="grey-text text-lighten-3" href="http://autovm.net/en/about.html" target="_blank"><?php echo Yii::t('app', 'About');?></a></li>
+                                <li><a class="grey-text text-lighten-3" href="https://www.cloudsurph.com" target="_blank"><?php echo Yii::t('app', 'Main Home');?></a></li>
+                                <li><a class="grey-text text-lighten-3" href="https://hosting.cloudsurph.com/index.php?rp=/login" target="_blank"><?php echo Yii::t('app', 'Support');?></a></li>
+                                <!-- <li><a class="grey-text text-lighten-3" href="http://autovm.net/en/about.html" target="_blank"><?php echo Yii::t('app', 'About');?></a></li>
                                 <li><a class="grey-text text-lighten-3" href="http://autovm.net/en/contact.html" target="_blank"><?php echo Yii::t('app', 'Contact');?></a></li>
-<li><a class="grey-text text-lighten-3" href="http://stack.autovm.net" target="_blank"><?php echo Yii::t('app', 'Stack');?></a></li>
+<li><a class="grey-text text-lighten-3" href="http://stack.autovm.net" target="_blank"><?php echo Yii::t('app', 'Stack');?></a></li> -->
                             </ul>
                         </div>
                     </div>
