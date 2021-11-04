@@ -92,7 +92,9 @@ $(".custom-option").on("click", function() {
             <!-- header -->
             <div class="navbar navbar-default navbar-fixed-top">
                 <div class="navbar-header">
-                    <a href="#" class="navbar-brand"> <img src="<?php echo $bundle->baseUrl;?>/img/logo1.png"></a>
+                <a href="<?php echo Yii::$app->urlManager->createUrl('/site');?>" class="brand-logo"><img src="<?php echo $bundle->baseUrl;?>/img/logo1.png" style="margin-top:10px;" width="150"></a>
+
+                    <!-- <a href="#" class="navbar-brand"> <img src="<?php echo $bundle->baseUrl;?>/img/logo1.png"></a> -->
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
