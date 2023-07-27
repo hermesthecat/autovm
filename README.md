@@ -24,7 +24,7 @@ Download and deploy [Ubuntu 18.04](http://file.autovm.net/vmware/templates/ubunt
 Enter following commands:
 
 ```shell
-$ cd /tmp && wget -O autovm.sh https://raw.githubusercontent.com/Cloud-Surph/autovm/master/autovm.sh && bash autovm.sh
+$ cd /tmp && wget -O autovm.sh https://raw.githubusercontent.com/hermesthecat/autovm/master/autovm.sh && bash autovm.sh
 ```
 After installation completed, You will see MySQL and login information.
 
