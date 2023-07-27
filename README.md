@@ -24,19 +24,19 @@ Download and deploy [Ubuntu 18.04](http://file.autovm.net/vmware/templates/ubunt
 Enter following commands:
 
 ```shell
-$ cd /tmp && wget -O autovm.sh https://raw.githubusercontent.com/hermesthecat/autovm/master/autovm.sh && bash autovm.sh
+cd /tmp && wget -O autovm.sh https://raw.githubusercontent.com/hermesthecat/autovm/master/autovm.sh && bash autovm.sh
 ```
 After installation completed, You will see MySQL and login information.
 
 ```shell
-$ mysql_secure_installation
+mysql_secure_installation
 ```
 
 #### Supervisor installation
 Supervisor is a process monitor for Linux. It automatically starts console processes.
 
 ```shell
-$ sudo apt-get install supervisor
+sudo apt-get install supervisor
 ```
 Supervisor config folder is usually available in ```/etc/supervisor/conf.d```. You can create any number of config files there.
 Create new file ```/etc/supervisor/conf.d/yii-queue-worker.conf``` and paste the following data inside file.
@@ -55,7 +55,7 @@ stdout_logfile=/var/www/autovm/runtime/logs/yii-queue-worker.log
 
 Make sure ```autovm/runtime``` directory has write access.
 
-Run ```$ supervisorctl reread``` to update the supervisor running tasks list.
+Run ```supervisorctl reread``` to update the supervisor running tasks list.
 
 ### Do you like to try for free?
 
