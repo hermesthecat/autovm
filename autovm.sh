@@ -24,10 +24,12 @@ config="server {
 }"
 
 # Update repositories
+sudo apt-add-repository ppa:ondrej/php -y
+
 apt update -y
 
 # Install requirements
-apt install -y nginx git unzip php7.2-fpm php7.2-cli php7.2-mysql php7.2-mbstring php7.2-gd php7.2-curl php7.2-zip php7.2-xml mysql-server python-pip && pip install spur pysphere crypto netaddr
+apt install -y nginx git unzip php7.2-fpm php7.2-cli php7.2-mysql php7.2-mbstring php7.2-gd php7.2-curl php7.2-zip php7.2-xml mysql-server python3-pip && pip install spur pysphere crypto netaddr
 
 # Random password
 password=$(openssl rand -base64 16)
@@ -52,7 +54,7 @@ sed -i 's/# multi_accept on/multi_accept on/' /etc/nginx/nginx.conf && echo $con
 sed -i 's/max_execution_time = 30/max_execution_time = 300/' /etc/php/7.2/fpm/php.ini && service php7.2-fpm restart
 
 # Configure AutoVM
-cd /var/www && rm -rf html && git clone https://github.com/Cloud-Surph/autovm && cd autovm && php7.2 composer.phar install && echo $php_config > /var/www/autovm/config/db.php && mysql -u root -proot autovm < database.sql && mysql -u root -e "USE autovm;UPDATE user SET auth_key = '$password'" && php7.2 yii migrate --interactive=0 && chmod -R 0777 /var/www/autovm
+cd /var/www && rm -rf html && git clone https://github.com/hermesthecat/autovm && cd autovm && php7.2 composer.phar install && echo $php_config > /var/www/autovm/config/db.php && mysql -u root -proot autovm < database.sql && mysql -u root -e "USE autovm;UPDATE user SET auth_key = '$password'" && php7.2 yii migrate --interactive=0 && chmod -R 0777 /var/www/autovm
 
 # Configure Cron
 cd /tmp && echo -e "*/5 * * * * php /var/www/autovm/yii cron/index\n0 0 * * * php /var/www/autovm/yii cron/reset" > cron && crontab cron
